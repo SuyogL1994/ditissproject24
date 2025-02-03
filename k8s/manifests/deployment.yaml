@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: feb3
+spec:
+  selector:
+    matchLabels:
+      app: feb3
+  template:
+    metadata:
+      labels:
+        app: feb3
+    spec:
+      containers:
+        - name: feb3
+          image: suyogl/feb3
+          resources:
+            limits:
+              memory: '128Mi'
+              cpu: '500m'
+          ports:
+            - containerPort: 80
